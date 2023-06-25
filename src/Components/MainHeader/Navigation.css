@@ -1,0 +1,29 @@
+nav {
+    float: right;
+  }
+  
+  nav ul {
+    list-style: none;
+    
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    padding: 10px;
+    display: inline-block;
+    margin-left: 20px;
+    background-color: #cfcecb;
+    border-radius: 5px;
+    font-weight: bolder;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+  }
+  a{
+    text-decoration: none;
+  }
+  
+  nav li:first-child {
+    margin-left: 0;
+  }
+  
