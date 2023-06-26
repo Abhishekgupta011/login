@@ -1,7 +1,7 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer ,useContext} from "react";
 import "./Login.css";
 import Button from "../UI/Button";
-
+import AuthContext from "../Store/Auth-context";
 const initialState = {
   email: "",
   password: "",
@@ -42,6 +42,7 @@ const formReducer = (state, action) => {
 
 function Login(props) {
   const [state, dispatch] = useReducer(formReducer, initialState);
+  const Authctx = useContext(AuthContext);
 
   useEffect(() => {
     let validationTimeout = setTimeout(() => {
@@ -67,7 +68,7 @@ function Login(props) {
 
   const loginPage = () => {
     dispatch({ type: "VALIDATE_FORM" });
-    props.onLogin();
+    Authctx.onLogin();
   };
 
   return (

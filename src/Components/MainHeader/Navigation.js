@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from '../UI/Button';
 import './Navigation.css';
+import AuthContext from '../Store/Auth-context';
 
 const Navigation = (props) => {
   return (
-    <nav>
+    <AuthContext.Consumer>
+    {(ctx)=>{
+      return <nav>
       <ul>
        
           <>
@@ -15,7 +18,7 @@ const Navigation = (props) => {
               <a href="/">Admin</a>
             </li>
             <li>
-              <Button type="submit" onClick={props.onLogout} className="button">
+              <Button type="submit" onClick={ctx.onLogout} className="button">
                 Logout
               </Button>
             </li>
@@ -23,6 +26,8 @@ const Navigation = (props) => {
       
       </ul>
     </nav>
+    }} 
+    </AuthContext.Consumer>
   );
 };
 
