@@ -2,6 +2,7 @@ import { useEffect, useReducer ,useContext} from "react";
 import "./Login.css";
 import Button from "../UI/Button";
 import AuthContext from "../Store/Auth-context";
+import Input from "./Input";
 const initialState = {
   email: "",
   password: "",
@@ -75,21 +76,21 @@ function Login(props) {
     <div className="form">
       <>
         <label htmlFor="email">E-Mail</label>
-        <input
+        <Input
           id="email"
           type="text"
           value={state.email}
           onChange={emailHandler}
         />
         <label htmlFor="password">Password</label>
-        <input
+        <Input
           id="password"
           type="password"
           value={state.password}
           onChange={passwordHandler}
         />
         <label htmlFor="name">College Name</label>
-        <input
+        <Input
           id="name"
           type="text"
           value={state.collegeName}
